@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>User Management</h1>
+
+      <button id="newUserBtn">New User</button>
+      <input type="text" id="search" placeholder="Search users..." />
+      <div id="userList">
+        <!-- User list will be populated here -->
+      </div>
+
+      <!-- New User Form Modal -->
+      <div id="newUserModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeNewUser">&times;</span>
+          <h2>Add New User</h2>
+          <form id="newUserForm">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required />
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Edit User Form Modal -->
+      <div id="editUserModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeEditUser">&times;</span>
+          <h2>Edit User</h2>
+          <form id="editUserForm">
+            <input type="hidden" id="editUserId" />
+
+            <label for="editFirstName">First Name:</label>
+            <input type="text" id="editFirstName" name="firstName" required />
+
+            <label for="editLastName">Last Name:</label>
+            <input type="text" id="editLastName" name="lastName" required />
+
+            <label for="editEmail">Email:</label>
+            <input type="email" id="editEmail" name="email" required />
+
+            <label for="editRole">Role:</label>
+            <select id="editRole" name="role">
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+
+            <button type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Delete Confirmation Modal -->
+      <div id="deleteUserModal" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" id="closeDeleteUser">&times;</span>
+          <h2>Confirm Delete</h2>
+          <p>Are you sure you want to delete this user?</p>
+          <button id="confirmDelete">Yes, Delete</button>
+          <button id="cancelDelete">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>
